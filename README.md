@@ -153,12 +153,19 @@ Screenshot: Final Webpage Result
 
 ## Technologies Used
 Amazon S3
+
 AWS Lambda
+
 AWS Glue
+
 AWS Glue Crawler
+
 Amazon Athena
+
 AWS IAM
+
 Amazon EC2
+
 Python (Flask, boto3)
 
 ## Conclusion
