@@ -124,12 +124,14 @@ Screenshot: Athena Query CSV Files in S3 (Enriched Folder)
 
 A Flask application was created to display Athena query results in a web-based dashboard.
 
-Run the Application
+Run the Application:
+
 ```python3 app.py```
 
 Open the application in a browser:
 
 ```http://<YOUR_PUBLIC_IP>:5000```
+
 Explanation
 
 The Flask app connects to Athena using boto3, executes the queries, retrieves results, and displays them as HTML tables.
