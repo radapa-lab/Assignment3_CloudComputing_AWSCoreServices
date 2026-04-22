@@ -145,6 +145,7 @@ Monthly Order Volume and Revenue
 Order Status Summary
 Average Order Value per Customer
 Top 10 Orders
+
 Screenshot: Final Webpage Result
 
 <img width="975" height="576" alt="image" src="https://github.com/user-attachments/assets/af79b983-9f7f-4bfd-bdd2-1081ce862ff8" />
