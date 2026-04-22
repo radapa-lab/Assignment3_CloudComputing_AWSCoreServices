@@ -1,11 +1,12 @@
-AWS Data Pipeline and Athena Dashboard
-Overview
+# AWS Data Pipeline and Athena Dashboard
+
+## Overview
 
 This project demonstrates the implementation of an end-to-end data pipeline using AWS services. The pipeline is designed to ingest raw data, process it automatically, make it queryable, and finally visualize the results through a web-based dashboard.
 
 The system uses Amazon S3 for storage, AWS Lambda for event-driven processing, AWS Glue for data transformation, Amazon Athena for querying, and a Flask application for displaying results.
 
-Architecture and Approach
+## Architecture and Approach
 
 The overall workflow of the system is as follows:
 
@@ -19,7 +20,7 @@ A Flask-based web application fetches Athena query results and displays them in 
 
 This architecture ensures automation, scalability, and efficient data processing.
 
-Step 1: Amazon S3 Bucket Structure
+### Step 1: Amazon S3 Bucket Structure
 
 Two main S3 buckets (or logical folders) are used:
 
@@ -34,7 +35,7 @@ Screenshot: Amazon S3 Bucket Structure
 
 <img width="975" height="551" alt="image" src="https://github.com/user-attachments/assets/534ce519-9aad-412e-ae31-c17a71afcc4b" />
 
-Step 2: IAM Roles and Permissions
+### Step 2: IAM Roles and Permissions
 
 Multiple IAM roles were created to allow secure communication between AWS services:
 
@@ -50,7 +51,7 @@ Screenshot: IAM Roles
 
 <img width="975" height="551" alt="image" src="https://github.com/user-attachments/assets/954d7ee2-3898-486c-9a24-afa8cd457a4a" />
 
-Step 3: AWS Lambda Function
+### Step 3: AWS Lambda Function
 
 A Lambda function was created to automatically process files uploaded into the S3 raw folder.
 
@@ -62,7 +63,7 @@ Screenshot: Lambda Function
 
 <img width="975" height="550" alt="image" src="https://github.com/user-attachments/assets/22161f9d-4329-49c2-9b63-ce1eb57e9380" />
 
-Step 4: S3 Trigger Configuration
+### Step 4: S3 Trigger Configuration
 
 An S3 trigger was configured to invoke the Lambda function automatically.
 
@@ -75,7 +76,7 @@ Screenshot: Configured Trigger
 <img width="975" height="546" alt="image" src="https://github.com/user-attachments/assets/f88696c0-b7fa-4780-bf3d-a4dcfdcddf57" />
 <img width="975" height="548" alt="image" src="https://github.com/user-attachments/assets/76526e87-3a1f-4053-84de-5937f5fd8085" />
 
-Step 5: Processed Data Output
+### Step 5: Processed Data Output
 
 After processing, the cleaned CSV file is stored in the processed folder of the S3 bucket.
 
@@ -88,7 +89,7 @@ Screenshot: Processed CSV in S3
 <img width="975" height="549" alt="image" src="https://github.com/user-attachments/assets/3fee5144-a8cc-47ca-b058-b635bff419df" />
 <img width="975" height="553" alt="image" src="https://github.com/user-attachments/assets/959190f6-aded-4f4c-b3cc-bfcf2aad6d4d" />
 
-Step 6: AWS Glue Crawler
+### Step 6: AWS Glue Crawler
 
 A Glue Crawler was created to scan the processed data and generate a table in the Glue Data Catalog.
 
@@ -101,7 +102,7 @@ Screenshot: Glue Crawler CloudWatch Logs
 <img width="975" height="544" alt="image" src="https://github.com/user-attachments/assets/5bbf89e6-57e0-4119-ac8b-e8be04fd3053" />
 <img width="975" height="551" alt="image" src="https://github.com/user-attachments/assets/dacae153-1d8f-4b24-b4b3-72a46223722d" />
 
-Step 7: Amazon Athena Queries
+### Step 7: Amazon Athena Queries
 
 Athena was used to run SQL queries on the processed data.
 
@@ -119,16 +120,16 @@ Screenshot: Athena Query CSV Files in S3 (Enriched Folder)
 
 <img width="975" height="550" alt="image" src="https://github.com/user-attachments/assets/3bad2f8e-9f55-4172-aecc-37ceea3b6c57" />
 
-Step 8: Flask Web Application
+### Step 8: Flask Web Application
 
 A Flask application was created to display Athena query results in a web-based dashboard.
 
 Run the Application
-python3 app.py
+```python3 app.py```
 
 Open the application in a browser:
 
-http://<YOUR_PUBLIC_IP>:5000
+```http://<YOUR_PUBLIC_IP>:5000```
 Explanation
 
 The Flask app connects to Athena using boto3, executes the queries, retrieves results, and displays them as HTML tables.
@@ -148,7 +149,7 @@ Screenshot: Final Webpage Result
 <img width="975" height="491" alt="image" src="https://github.com/user-attachments/assets/dfbad70f-c64c-4a77-86fa-67ff50117127" />
 <img width="975" height="575" alt="image" src="https://github.com/user-attachments/assets/52fb7327-25aa-48cf-a730-f086e1dc82f2" />
 
-Technologies Used
+## Technologies Used
 Amazon S3
 AWS Lambda
 AWS Glue
@@ -157,7 +158,8 @@ Amazon Athena
 AWS IAM
 Amazon EC2
 Python (Flask, boto3)
-Conclusion
+
+## Conclusion
 
 This project demonstrates the implementation of a complete data pipeline using AWS services. By integrating S3, Lambda, Glue, and Athena, the system enables automated data processing and efficient querying of large datasets.
 
